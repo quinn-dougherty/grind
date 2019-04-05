@@ -1,5 +1,7 @@
 #!/usr/bin/env python
+'''https://en.wikipedia.org/wiki/SKI_combinator_calculus
 
+via chapter 3 of hindley,seldin'''
 import re
 from typing import List
 
