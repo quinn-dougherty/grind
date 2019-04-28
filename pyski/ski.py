@@ -66,3 +66,11 @@ def programming(quit: str=':q') -> str:
 '''test:
 consume(IaKbcSdef)==abdf(ef)'''
 testinp = 'IaKbcSdef'
+'''
+if __name__=='__main__': 
+    while True: 
+        show(consume(input()))
+        ''' 
+
+
+
