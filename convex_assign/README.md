@@ -22,24 +22,24 @@ i'm _guessing_ something to do with [finite differences](https://en.wikipedia.or
 
 
 
-## _this was dumb stream of conscious before i noticed that i needed to be looking at finite differences. 
+## _this was dumb stream of conscious before i noticed that i needed to be looking at finite differences._ 
 
-_holding preferences constant, what is the derivative of utility with respect to assignment? 
+_holding preferences constant, what is the derivative of utility with respect to assignment?_
 
-assignment is a `Dict[bin, List[agent]]`. I don't know how to take a derivative from that input target. With the constraint that every agent can only appear in one list, and the constraint that no agent is left behind.  
+_assignment is a `Dict[bin, List[agent]]`. I don't know how to take a derivative from that input target. With the constraint that every agent can only appear in one list, and the constraint that no agent is left behind._ 
 
-These two constraints make it an _invertible_ function. Notice that every invertible map from A to some collections of B is isomorphic to a non-injective map from B to A. 
+_These two constraints make it an _invertible_ function. Notice that every invertible map from A to some collections of B is isomorphic to a non-injective map from B to A._
 
-Would the type of `Injection[agent, bin]` be easier as an input type to derive with respect to?? 
+_Would the type of `Injection[agent, bin]` be easier as an input type to derive with respect to??_ 
 
-suppose we start with the formalism `df/dx = lim(f(x+h)-fx / h)`. What does `x+h` mean? "wiggling" tiny amounts of input here would mean _rearranging_ the assignment. Like, the group action that changes the mapping, that moves one arrow to a different place (or switches two arrows for eachother?) but we couldn't have a `limit as h goes to zero`, we couldn't `divide by h` in this sense... could we? 
+_suppose we start with the formalism `df/dx = lim(f(x+h)-fx / h)`. What does `x+h` mean? "wiggling" tiny amounts of input here would mean _rearranging_ the assignment. Like, the group action that changes the mapping, that moves one arrow to a different place (or switches two arrows for eachother?) but we couldn't have a `limit as h goes to zero`, we couldn't `divide by h` in this sense... could we?_ 
 
-Unless `dividing by h` is _inverse of h_, meaning if `x` is an assignment that contains `Alice -> pizza` and `bob -> tofu`, `+h` applies the switching action, so it literally takes the difference between the utility of the assignment that contains `alice -> pizza, bob -> tofu` and subtracts from it the utility of the assignment that contains `alice -> tofu, bob -> pizza`. 
+_Unless `dividing by h` is _inverse of h_, meaning if `x` is an assignment that contains `Alice -> pizza` and `bob -> tofu`, `+h` applies the switching action, so it literally takes the difference between the utility of the assignment that contains `alice -> pizza, bob -> tofu` and subtracts from it the utility of the assignment that contains `alice -> tofu, bob -> pizza`._ 
 
-Perhaps the h in the denominator isn't undoing an action (because once we've mapped to numbers --- utility --- we can't rearrange the assignment really), it's _counting the amount of such actions_, so `h=3` had 3 reassignment actions, etc., and h=1 is in fact our best approximation...
+_Perhaps the h in the denominator isn't undoing an action (because once we've mapped to numbers --- utility --- we can't rearrange the assignment really), it's _counting the amount of such actions_, so `h=3` had 3 reassignment actions, etc., and h=1 is in fact our best approximation..._
 
-## no wait, think recurrence relations not derivatives. 
+## _no wait, think recurrences not derivatives._
 
-of course. the discrete version of derivative is [difference](https://en.wikipedia.org/wiki/Finite_difference#difference_operator). idiot.
+_of course. the discrete version of derivative is difference. idiot._
 
 
