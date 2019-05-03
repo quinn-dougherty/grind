@@ -16,10 +16,12 @@ have to workshop an exact solution sometime.
 An assignment `Dict[project, List[person]]`, and with the constraint that **every person is in exactly one project** it is in fact _invertible_. But every invertible map from A to collections of B is also a non-injective map from B to A, so we could in fact rewrite `assignment` as `Dict[person, project]`. 
 
 what is a derivative? it is when the observer _wiggles_ input to see what it does to output. our input type is a set of non-injective maps. 
+
+
 ## How do we wiggle a set of non-injective maps? 
 i'm _guessing_ something to do with [finite differences](https://en.wikipedia.org/wiki/Finite_difference#difference_operator). 
 
-
+We know we can _rearrange_ the mapping. Maybe a mapping containing both `alice->pizza, bob->tofu` is "one step away" from a mapping that's exactly the same except `alice->tofu, bob->pizza`. But will that help us with the _numeric_ side, the value/utility of a mapping?
 
 
 ## _this was dumb stream of conscious before i noticed that i needed to be looking at finite differences._ 
