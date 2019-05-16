@@ -1,8 +1,7 @@
 from itertools import product
 from typing import Tuple, List, Dict, Any
-import random as rn
 from functools import reduce
-from numpy.random import choice
+from numpy.random import choice, randint
 
 num_people = 150
 
@@ -44,8 +43,8 @@ class assignment:
     self.preferences_ran_const = preferences_ran
     
     # assumption: every project has the same number of people
-    self.random_assignment = {project: [people.pop(rn.randint(0,len(people)-1)) 
-                                        for _ in range(num_people//num_projects)] 
+    self.random_assignment = {project: [people.pop(randint(1, len(people)) - 1)
+                                        for _ in range(num_people//num_projects - 1)]
                               for project in self.projects}
 
   def total_utility(self, preferences: Dict[str, List[str]] = None) -> int: 
